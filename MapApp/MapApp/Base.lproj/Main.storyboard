@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JGp-jP-czj">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map view-->
+        <scene sceneID="lOC-4J-OGv">
+            <objects>
+                <viewController id="YwB-FP-ls3" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mMm-w1-U5Z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ki-aK-5Hr">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Standard" id="JK7-ln-ijZ">
+                                        <color key="tintColor" systemColor="systemOrangeColor"/>
+                                        <connections>
+                                            <action selector="standard:" destination="YwB-FP-ls3" id="cb5-Ad-ns1"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Satelite" id="iei-CE-Las">
+                                        <color key="tintColor" systemColor="systemOrangeColor"/>
+                                        <connections>
+                                            <action selector="satelite:" destination="YwB-FP-ls3" id="gqi-eC-QZ2"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Hybrid" id="7b5-HP-B7T">
+                                        <color key="tintColor" systemColor="systemOrangeColor"/>
+                                        <connections>
+                                            <action selector="hybrid:" destination="YwB-FP-ls3" id="fqx-ub-Xuz"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Rym-tm-4Bv">
+                                        <color key="tintColor" systemColor="systemOrangeColor"/>
+                                    </barButtonItem>
+                                    <barButtonItem title="Locate" id="YZO-lq-t1j">
+                                        <color key="tintColor" systemColor="systemOrangeColor"/>
+                                        <connections>
+                                            <action selector="locate:" destination="YwB-FP-ls3" id="ENT-Vy-uIM"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="tk2-ck-V2l">
+                                <rect key="frame" x="0.0" y="44" width="375" height="579"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eIV-51-l65"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9Ki-aK-5Hr" firstAttribute="top" secondItem="tk2-ck-V2l" secondAttribute="bottom" id="2hG-CL-I0C"/>
+                            <constraint firstItem="tk2-ck-V2l" firstAttribute="trailing" secondItem="9Ki-aK-5Hr" secondAttribute="trailing" id="JEn-AA-kyi"/>
+                            <constraint firstItem="9Ki-aK-5Hr" firstAttribute="bottom" secondItem="eIV-51-l65" secondAttribute="bottom" id="gOE-ct-1WG"/>
+                            <constraint firstItem="tk2-ck-V2l" firstAttribute="top" secondItem="eIV-51-l65" secondAttribute="top" id="i01-O0-nGo"/>
+                            <constraint firstItem="9Ki-aK-5Hr" firstAttribute="leading" secondItem="eIV-51-l65" secondAttribute="leading" id="m84-7e-Fpx"/>
+                            <constraint firstItem="tk2-ck-V2l" firstAttribute="leading" secondItem="eIV-51-l65" secondAttribute="leading" id="qpI-aW-TKp"/>
+                            <constraint firstItem="9Ki-aK-5Hr" firstAttribute="trailing" secondItem="eIV-51-l65" secondAttribute="trailing" id="x7H-3c-zI8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Map view" id="p7t-YJ-5UV">
+                        <barButtonItem key="rightBarButtonItem" title="Directions" id="WOF-tz-sAb">
+                            <color key="tintColor" systemColor="systemOrangeColor"/>
+                            <connections>
+                                <action selector="directions:" destination="YwB-FP-ls3" id="Zsu-WP-dob"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="tk2-ck-V2l" id="3Bb-fZ-FqK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MSX-4S-bmi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1197.5999999999999" y="162.3688155922039"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Nxn-ll-Ujj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JGp-jP-czj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oYn-R8-ikG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="systemOrangeColor"/>
+                        <color key="barTintColor" systemColor="systemOrangeColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Avenir-HeavyOblique" family="Avenir" pointSize="31"/>
+                            <color key="textColor" systemColor="systemOrangeColor"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="YwB-FP-ls3" kind="relationship" relationship="rootViewController" id="a6v-1u-CUn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EKr-nw-Vd2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="435" y="163"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
