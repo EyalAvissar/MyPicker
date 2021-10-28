@@ -11,7 +11,7 @@
 
 -(void)parseData:(NSDictionary *)JSON {
 
-//    NSLog(@"movies json %@",JSON[@"movies"]);
+    NSLog(@"movies json %@",JSON[@"movies"]);
 
 }
 
