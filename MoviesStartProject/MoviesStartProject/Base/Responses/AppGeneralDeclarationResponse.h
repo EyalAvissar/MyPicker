@@ -12,7 +12,16 @@
 
 @interface AppGeneralDeclarationResponse : BaseGeneralDeclarationResponse
 
+//Banner properties
+//Better create a banner object and hold it as a property
 @property (nonatomic, strong) NSString *bannerImageUrl;
 @property (nonatomic, strong) NSString *bannerVideoUrl;
+@property Boolean isBannerToAppear;
+//Banner properties
+
+@property long moviesLastUpdate;
+@property long cinemasLastUpdate;
+
+@property (nonatomic, strong) NSArray *moviesArray;
 
 @end

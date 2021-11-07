@@ -125,30 +125,52 @@
                         <subviews>
                             <searchBar contentMode="redraw" placeholder="Search for movie name" translatesAutoresizingMaskIntoConstraints="NO" id="SsX-6H-ijA">
                                 <rect key="frame" x="0.0" y="87" width="375" height="51"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
                             </searchBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S8F-IH-DlA">
-                                <rect key="frame" x="287" y="56" width="76" height="31"/>
+                                <rect key="frame" x="243" y="56" width="120" height="31"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="76" id="XxR-fo-bFI"/>
+                                    <constraint firstAttribute="width" constant="120" id="XxR-fo-bFI"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="מיון">
+                                <buttonConfiguration key="configuration" style="plain" title="מיון לפי א״ב">
                                     <color key="baseForegroundColor" red="0.20528563859999999" green="0.2728675008" blue="0.35828500990000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="sort:" destination="Ozg-4C-1Vt" eventType="touchUpInside" id="YuL-aD-hIf"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6SF-Qp-WdR">
                                 <rect key="frame" x="0.0" y="177" width="375" height="490"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieCell" id="xEc-PY-AYi">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieCell" textLabel="iPo-z4-a8t" detailTextLabel="NOM-YK-wki" style="IBUITableViewCellStyleValue1" id="JCB-Sw-yt9">
                                         <rect key="frame" x="0.0" y="44.5" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xEc-PY-AYi" id="DXv-aQ-wH0">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JCB-Sw-yt9" id="5lR-R8-HUp">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iPo-z4-a8t">
+                                                    <rect key="frame" x="16" y="15" width="25" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NOM-YK-wki">
+                                                    <rect key="frame" x="326" y="15" width="33" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="KAr-4E-jof" kind="show" identifier="showMovieDetails" id="8gA-t9-T9R"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -166,6 +188,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="דרמה">
                                             <color key="baseForegroundColor" red="0.20528563859999999" green="0.2728675008" blue="0.35828500990000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="showMovieGenre:" destination="Ozg-4C-1Vt" eventType="touchUpInside" id="GTv-Zg-faX"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nDH-H2-Mvb">
                                         <rect key="frame" x="64.5" y="0.0" width="61" height="31"/>
@@ -174,6 +199,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="אקשן">
                                             <color key="baseForegroundColor" red="0.20528563859999999" green="0.2728675008" blue="0.35828500990000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="showMovieGenre:" destination="Ozg-4C-1Vt" eventType="touchUpInside" id="OJc-fW-fWC"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUG-Hx-52w">
                                         <rect key="frame" x="126.5" y="0.0" width="72" height="31"/>
@@ -182,6 +210,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="פנטזיה">
                                             <color key="baseForegroundColor" red="0.20528563859999999" green="0.2728675008" blue="0.35828500990000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="showMovieGenre:" destination="Ozg-4C-1Vt" eventType="touchUpInside" id="hSN-AZ-525"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D02-Wl-Jpp">
                                         <rect key="frame" x="199.5" y="0.0" width="56" height="31"/>
@@ -190,6 +221,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="פשע">
                                             <color key="baseForegroundColor" red="0.20528563859999999" green="0.2728675008" blue="0.35828500990000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="showMovieGenre:" destination="Ozg-4C-1Vt" eventType="touchUpInside" id="j35-Q3-vc6"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwP-ij-YhM">
                                         <rect key="frame" x="256.5" y="0.0" width="72.5" height="31"/>
@@ -198,6 +232,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="קומדיה">
                                             <color key="baseForegroundColor" red="0.20528563859999999" green="0.2728675008" blue="0.35828500990000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="showMovieGenre:" destination="Ozg-4C-1Vt" eventType="touchUpInside" id="kG8-EQ-3QU"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LJz-1z-p5V">
                                         <rect key="frame" x="330" y="0.0" width="53" height="31"/>
@@ -206,6 +243,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="הכל">
                                             <color key="baseForegroundColor" red="0.20528563859999999" green="0.2728675008" blue="0.35828500990000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="showAll:" destination="Ozg-4C-1Vt" eventType="touchUpInside" id="3ZX-XJ-f4M"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -229,12 +269,107 @@
                     </view>
                     <navigationItem key="navigationItem" id="Srn-F5-oOs"/>
                     <connections>
+                        <outlet property="MovieSearchBar" destination="SsX-6H-ijA" id="v6S-yq-UhS"/>
                         <outlet property="moviesTable" destination="6SF-Qp-WdR" id="iuq-lr-gB2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C7w-Nj-Y2s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3085.5999999999999" y="51.724137931034484"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="A0a-eU-84G">
+            <objects>
+                <viewController storyboardIdentifier="detailController" id="KAr-4E-jof" customClass="DetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bTr-dG-jUH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lfw-S0-iV9">
+                                <rect key="frame" x="16" y="368" width="343" height="279"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="sZP-Kx-NRK">
+                                <rect key="frame" x="0.0" y="57" width="343" height="241"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="ghm-DG-pAA">
+                                        <rect key="frame" x="0.0" y="0.0" width="171.5" height="241"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l5r-lm-OuK">
+                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="38"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3i-Cp-SJi">
+                                                <rect key="frame" x="0.0" y="68" width="171.5" height="37.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7W-fl-seK">
+                                                <rect key="frame" x="0.0" y="135.5" width="171.5" height="38"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdD-c6-D9W">
+                                                <rect key="frame" x="0.0" y="203.5" width="171.5" height="37.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8bh-n5-BJL">
+                                        <rect key="frame" x="171.5" y="0.0" width="171.5" height="241"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TSL-Vf-Gen">
+                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="210"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LHo-SE-1Xf">
+                                                <rect key="frame" x="0.0" y="210" width="171.5" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <connections>
+                                                    <action selector="showPromo:" destination="KAr-4E-jof" eventType="touchUpInside" id="d7M-g8-ytV"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9qt-UB-xbr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sZP-Kx-NRK" firstAttribute="leading" secondItem="9qt-UB-xbr" secondAttribute="leading" id="0qm-0c-77T"/>
+                            <constraint firstItem="lfw-S0-iV9" firstAttribute="width" secondItem="sZP-Kx-NRK" secondAttribute="width" id="7Sk-iq-hNi"/>
+                            <constraint firstItem="lfw-S0-iV9" firstAttribute="leading" secondItem="9qt-UB-xbr" secondAttribute="leading" constant="16" id="d70-fD-LFZ"/>
+                            <constraint firstItem="sZP-Kx-NRK" firstAttribute="top" secondItem="9qt-UB-xbr" secondAttribute="top" constant="13" id="dXr-g6-lnM"/>
+                            <constraint firstItem="lfw-S0-iV9" firstAttribute="top" secondItem="sZP-Kx-NRK" secondAttribute="bottom" constant="70" id="ieZ-0C-hMc"/>
+                            <constraint firstItem="9qt-UB-xbr" firstAttribute="bottom" secondItem="lfw-S0-iV9" secondAttribute="bottom" constant="20" id="smv-iW-i66"/>
+                            <constraint firstItem="9qt-UB-xbr" firstAttribute="trailing" secondItem="lfw-S0-iV9" secondAttribute="trailing" constant="16" id="sni-VZ-vfM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Fze-iA-CsA"/>
+                    <connections>
+                        <outlet property="categoryLabel" destination="P7W-fl-seK" id="VJT-4c-umg"/>
+                        <outlet property="descriptionTextView" destination="lfw-S0-iV9" id="pDN-o7-yde"/>
+                        <outlet property="movieImageView" destination="TSL-Vf-Gen" id="vRn-1c-sjF"/>
+                        <outlet property="nameLabel" destination="l5r-lm-OuK" id="7ZT-aL-Rfk"/>
+                        <outlet property="promoURL" destination="LHo-SE-1Xf" id="nSZ-77-pJF"/>
+                        <outlet property="ratingLabel" destination="wdD-c6-D9W" id="moO-La-hcm"/>
+                        <outlet property="yearLabel" destination="M3i-Cp-SJi" id="BYs-nt-dXf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UcF-yz-OCs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3784.8000000000002" y="60.719640179910051"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ikp-pC-jD8">
@@ -256,6 +391,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

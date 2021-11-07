@@ -9,9 +9,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MoviesViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface MoviesViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *moviesTable;
+
+- (IBAction)sort:(UIButton *)sender;
+- (IBAction)showMovieGenre:(UIButton *)sender;
+- (IBAction)showAll:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UISearchBar *MovieSearchBar;
 
 @end
 

@@ -8,5 +8,17 @@
 #import "Movie.h"
 
 @implementation Movie
+ 
+- (nonnull id)copyWithZone:(nullable NSZone *)zone {
+    Movie *movieCopy = [[Movie alloc] init];
+    
+    movieCopy.name = [self.name copy];
+    movieCopy.year = [self.year copy];
+    movieCopy.category = [self.category copy];
+    movieCopy.movieId = [self.movieId copy];
+    movieCopy.cinemasId = [self.cinemasId copy];
+    
+    return movieCopy;
+}
 
 @end

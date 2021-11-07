@@ -38,6 +38,7 @@
 
 - (void)updateLoaderWithMethodName:(NSString*)strMethodName {
     
+    [self isVersionValid];
     numOfFinishedCalls++;
     
     // !shouldDownloadMediaZipFile && !canLogin
@@ -110,6 +111,24 @@
     [bannerController setModalPresentationStyle:UIModalPresentationFullScreen];
     
     [self presentViewController:bannerController animated:true completion:nil];
+}
+
+- (BOOL) isVersionValid {
+    if (![ApplicationManager sharedInstance].startUpManager.isValidVersion) {
+        
+        NSString *alertTitle = @"Your app version  is not up to date";
+        
+        NSString *alertMessage = @"Please update your app in appStore";
+        
+        UIAlertController *invalidVersion = [UIAlertController alertControllerWithTitle: alertTitle message:alertMessage preferredStyle:UIAlertControllerStyleActionSheet];
+        
+        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+        [invalidVersion addAction:cancel];
+        [self presentViewController:invalidVersion animated:true completion:nil];
+        
+        return false;
+    }
+    return true;
 }
 
 @end

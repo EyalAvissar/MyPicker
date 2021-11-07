@@ -25,11 +25,18 @@
 
 static StartUpManager *_sharedInstance = nil;
 
+@interface StartUpManager ()
+{
+    NSString *token;
+}
+@end
+
 @implementation StartUpManager
 + (StartUpManager *)sharedInstance {
     
     if (! _sharedInstance) {
         _sharedInstance = [[StartUpManager alloc] init];
+        _sharedInstance.isValidVersion = true;
     }
     
     return _sharedInstance;
@@ -108,6 +115,8 @@ static StartUpManager *_sharedInstance = nil;
 - (void)serverRequestFailed:(BaseServerRequestResponse *)baseResponse baseRequest:(BaseRequest *)baseRequest {
 }
 
+
+
 - (void)callNextRequest:(BaseServerRequestResponse *)baseResponse {
     if ([baseResponse.methodName isEqual: mGetHostUrl]) {
         NSString *baseUrl = ((GetHostUrlResponse *) baseResponse).hostURL;
@@ -123,19 +132,34 @@ static StartUpManager *_sharedInstance = nil;
     else if ([baseResponse.methodName isEqual: mApplicationToken]) {
         [ApplicationManager sharedInstance].requestManager.strApplicationToken = ((ApplicationTokenResponse*)baseResponse).strApplicationToken;
         
-        [self setSettings];
-    }
-    else if ([baseResponse.methodName isEqual: mSetSettings]) {
-        [self validateVersion];
-    }
-    else if ([baseResponse.methodName isEqual: mValidateVersion]) {
+        token = [ApplicationManager sharedInstance].requestManager.strApplicationToken;
+
+        //since token is not part of my calls parameters, pretend it is by checking that it exists.
         
+        if (token) {
+            [self setSettings];
+        }
+        else {
+            return;
+        }
+    }
+    else if ([baseResponse.methodName isEqual: mSetSettings] && token) {
+        [self validateVersion];
+        
+        if (!self.isValidVersion) { //to check alert reverse the condition and set isValidVersion to false
+            NSLog(@"invalid version!");
+            token = nil;
+        }
+        
+    }
+    else if ([baseResponse.methodName isEqual: mValidateVersion] && token) {
+
         [self generalDeclaration];
     }
-    else if ([baseResponse.methodName isEqual:mGeneralDeclaration]) {
+    else if ([baseResponse.methodName isEqual:mGeneralDeclaration] && token) {
         [self movies];
     }
-    else if ([baseResponse.methodName isEqual: mGetMovies]) {
+    else if ([baseResponse.methodName isEqual: mGetMovies] && token) {
         [self cinemas];
     }
 }

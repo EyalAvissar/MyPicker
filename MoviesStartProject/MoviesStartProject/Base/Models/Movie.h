@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Movie : NSObject
+@interface Movie : NSObject <NSCopying>
 
 @property (nonatomic, strong) NSString *category;
 @property (nonatomic, strong) NSArray *cinemasId;

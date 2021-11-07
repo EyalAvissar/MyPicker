@@ -15,6 +15,10 @@
 		E82666E7272ACC9B005E7784 /* MoviesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E82666E6272ACC9B005E7784 /* MoviesRequest.m */; };
 		E82666EB272AD484005E7784 /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = E82666EA272AD484005E7784 /* Movie.m */; };
 		E82782AF2727DC8A00EFA560 /* IMAbstractViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E82782AD2727DC8A00EFA560 /* IMAbstractViewController.m */; };
+		E847C11B272E9E4E00A754F9 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E847C11A272E9E4E00A754F9 /* WebKit.framework */; };
+		E8A19F67272E7C5100BE97DB /* MovieTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A19F65272E7C5100BE97DB /* MovieTableCell.m */; };
+		E8A19F68272E7C5100BE97DB /* MovieTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8A19F66272E7C5100BE97DB /* MovieTableCell.xib */; };
+		E8A19F6B272E8E6E00BE97DB /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A19F6A272E8E6E00BE97DB /* DetailViewController.m */; };
 		E8BAF4BA27295AE700E865AD /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BAF4B927295AE700E865AD /* BannerViewController.m */; };
 		E8C3EE4E27254EAB0086D16A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C3EE4D27254EAB0086D16A /* AppDelegate.m */; };
 		E8C3EE5127254EAB0086D16A /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C3EE5027254EAB0086D16A /* SceneDelegate.m */; };
@@ -93,6 +97,12 @@
 		E82666EA272AD484005E7784 /* Movie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
 		E82782AD2727DC8A00EFA560 /* IMAbstractViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMAbstractViewController.m; sourceTree = "<group>"; };
 		E82782AE2727DC8A00EFA560 /* IMAbstractViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMAbstractViewController.h; sourceTree = "<group>"; };
+		E847C11A272E9E4E00A754F9 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		E8A19F64272E7C5100BE97DB /* MovieTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieTableCell.h; sourceTree = "<group>"; };
+		E8A19F65272E7C5100BE97DB /* MovieTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieTableCell.m; sourceTree = "<group>"; };
+		E8A19F66272E7C5100BE97DB /* MovieTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieTableCell.xib; sourceTree = "<group>"; };
+		E8A19F69272E8E6D00BE97DB /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		E8A19F6A272E8E6E00BE97DB /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		E8BAF4B827295AE700E865AD /* BannerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerViewController.h; sourceTree = "<group>"; };
 		E8BAF4B927295AE700E865AD /* BannerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerViewController.m; sourceTree = "<group>"; };
 		E8C3EE4927254EAB0086D16A /* MoviesStartProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoviesStartProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,6 +186,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E847C11B272E9E4E00A754F9 /* WebKit.framework in Frameworks */,
 				79DFC09B54C35902306519BD /* Pods_MoviesStartProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,6 +426,11 @@
 				E8BAF4B927295AE700E865AD /* BannerViewController.m */,
 				E82666DF272AC11C005E7784 /* MoviesViewController.h */,
 				E82666E0272AC11C005E7784 /* MoviesViewController.m */,
+				E8A19F64272E7C5100BE97DB /* MovieTableCell.h */,
+				E8A19F65272E7C5100BE97DB /* MovieTableCell.m */,
+				E8A19F69272E8E6D00BE97DB /* DetailViewController.h */,
+				E8A19F6A272E8E6E00BE97DB /* DetailViewController.m */,
+				E8A19F66272E7C5100BE97DB /* MovieTableCell.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -422,6 +438,7 @@
 		F86A96D8C595D953E77E156F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E847C11A272E9E4E00A754F9 /* WebKit.framework */,
 				FC9F7E043F2D070D78A880E4 /* Pods_MoviesStartProject.framework */,
 				7E64A93817A835A45DFA1F06 /* Pods_MoviesStartProject_MoviesStartProjectUITests.framework */,
 				3DE226175652558C1FC206FD /* Pods_MoviesStartProjectTests.framework */,
@@ -540,6 +557,7 @@
 				E8C3EE5C27254EAD0086D16A /* LaunchScreen.storyboard in Resources */,
 				E8C3EE5927254EAD0086D16A /* Assets.xcassets in Resources */,
 				E8C3EE5727254EAB0086D16A /* Main.storyboard in Resources */,
+				E8A19F68272E7C5100BE97DB /* MovieTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -678,6 +696,7 @@
 				E8BAF4BA27295AE700E865AD /* BannerViewController.m in Sources */,
 				E8C3EEAF2725631C0086D16A /* BaseGeneralDeclarationResponse.m in Sources */,
 				E82666DE272AA0D3005E7784 /* UIWindow+Display.m in Sources */,
+				E8A19F67272E7C5100BE97DB /* MovieTableCell.m in Sources */,
 				E8C3EEA62725605C0086D16A /* BaseResponse.m in Sources */,
 				E8EEA0A52726DE51006B8FB1 /* SetSettingsResponse.m in Sources */,
 				E8EEA0982726DB89006B8FB1 /* GeneralDeclarationRequest.m in Sources */,
@@ -701,6 +720,7 @@
 				E8C3EE94272556090086D16A /* RequestManager.m in Sources */,
 				E82666EB272AD484005E7784 /* Movie.m in Sources */,
 				E8EEA0B42726E9A3006B8FB1 /* CinemasResponse.m in Sources */,
+				E8A19F6B272E8E6E00BE97DB /* DetailViewController.m in Sources */,
 				E8C3EE9F27255F570086D16A /* GetHostUrlResponse.m in Sources */,
 				E82666E7272ACC9B005E7784 /* MoviesRequest.m in Sources */,
 				E8C3EEB327256F4A0086D16A /* LoadingViewController.m in Sources */,

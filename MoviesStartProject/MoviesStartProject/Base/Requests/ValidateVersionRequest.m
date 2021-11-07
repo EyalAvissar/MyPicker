@@ -15,7 +15,6 @@ static NSString* requestName  = mValidateVersion;
 
 -(BaseServerRequestResponse*)buildBaseServerResponse:(NSDictionary *)jsonParsed
 {
-    
     ValidateVersionResponse* validateVersionResponse = [[ValidateVersionResponse alloc]init];
     [validateVersionResponse createResponse:jsonParsed];
     

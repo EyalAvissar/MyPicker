@@ -25,6 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property BOOL inProcess;
 
 @property NSString *receivedURL;
+@property Boolean isValidVersion;
 
 -(void)start;
 -(void)reset;
