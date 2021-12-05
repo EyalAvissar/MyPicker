@@ -1,6 +1,0 @@
-framework module Pods_MoviesStartProject_MoviesStartProjectUITests {
-  umbrella header "Pods-MoviesStartProject-MoviesStartProjectUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}

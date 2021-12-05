@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WSK-5y-24l">
+                                <rect key="frame" x="0.0" y="432.5" width="414" height="31"/>
+                                <color key="tintColor" systemColor="tertiarySystemBackgroundColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="show popup"/>
+                                <connections>
+                                    <action selector="showPopup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EA2-js-CE2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9r0-mh-HUx">
+                                <rect key="frame" x="0.0" y="60" width="414" height="31"/>
+                                <color key="tintColor" systemColor="tertiarySystemBackgroundColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="show popup"/>
+                                <connections>
+                                    <action selector="showPopup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9GO-58-WAr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfn-lJ-tBa">
+                                <rect key="frame" x="0.0" y="769" width="414" height="31"/>
+                                <color key="tintColor" systemColor="tertiarySystemBackgroundColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="show popup"/>
+                                <connections>
+                                    <action selector="showPopup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ovh-nJ-tHZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9r0-mh-HUx" firstAttribute="leading" secondItem="WSK-5y-24l" secondAttribute="leading" id="DQJ-Ta-a2a"/>
+                            <constraint firstItem="9r0-mh-HUx" firstAttribute="trailing" secondItem="WSK-5y-24l" secondAttribute="trailing" id="F7B-lc-IMK"/>
+                            <constraint firstItem="9r0-mh-HUx" firstAttribute="trailing" secondItem="cfn-lJ-tBa" secondAttribute="trailing" id="Z4j-ht-O31"/>
+                            <constraint firstItem="9r0-mh-HUx" firstAttribute="leading" secondItem="cfn-lJ-tBa" secondAttribute="leading" id="coP-mN-MgY"/>
+                            <constraint firstItem="9r0-mh-HUx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iWV-Fr-Kio"/>
+                            <constraint firstItem="WSK-5y-24l" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="mR9-Sr-Nc6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cfn-lJ-tBa" secondAttribute="bottom" constant="62" id="nk5-ee-mwM"/>
+                            <constraint firstItem="9r0-mh-HUx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="r4c-Ea-HLZ"/>
+                            <constraint firstItem="9r0-mh-HUx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tQ6-vG-UyO"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="129"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiarySystemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
